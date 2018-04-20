@@ -1,0 +1,328 @@
+base-color = #152121
+body
+    font-style 20px
+
+body,div
+    margin 0
+    padding 0
+    background #ffef5e
+
+.border
+    border 1px solid base-color
+
+.mian
+    position absolute
+    width 70px
+
+.wanzi
+    position absolute
+    top 250px
+    left 100px
+    z-index  10
+
+    .hairs
+        background base-color
+        width 190px
+        height 250px
+        left -30px
+        top -50px
+        position absolute
+        border-radius 50% 50% 0 0
+        overflow hidden
+
+        &:after
+            content ''
+            position absolute
+            width 300px
+            height 200px
+            top 120px
+            background #ffef5e
+
+
+        .hair
+            width 35px
+            height 45px
+            background base-color
+            position absolute
+            z-index 1
+            transform rotate(70deg) scale(1) skew(44deg) translate(8px)
+
+            &.hair1
+                top 17px
+                left 27px
+            &.hair2
+                top 8px
+                left 52px
+            &.hair3
+                top 4px
+                left 73px
+            &.hair4
+                top 0
+                left 90px
+            &.hair5
+                top 4px
+                left 108px
+            &.hair6
+                top 8px
+                left 125px
+            &hair7
+                top 17px
+                right 17px
+
+    
+    .face
+        background #fbdac7
+        width 130px
+        height 100px
+        position absolute
+        top 0
+        border-radius 20px 20px 50px 50px
+
+        &:after
+            content ''
+            width 15px
+            height 10px
+            background #fbdac7
+            position absolute
+            bottom -10px
+            left 50%
+            margin-left -7px
+
+        .brow
+            width 42px
+            height 10px
+            background base-color
+            position absolute
+            top 26px
+            border-radius 50%
+
+            &:after
+                content  ''
+                position absolute
+                width 50px
+                height 10px
+                top 1px
+                border-radius 50%
+                background #fbdac7
+                
+
+            &.left-brow
+                left 18px
+                transform rotate(-10deg)
+            &.right-brow
+                right 14px
+                transform rotate(10deg)
+        
+        .eye
+            width 20px
+            height 10px
+            background base-color
+            border-radius 50%
+            position absolute
+            z-index 2
+            top 40px
+
+            &.left-eye
+                left 34px
+            &.right-eye
+                right  34px
+
+        .blusher
+            width 14px
+            height 12px
+            background #f79c99
+            position absolute
+            border-radius 50%
+            top 70px
+
+            &.left-blusher
+                left 8px
+            &.right-blusher
+                right 8px
+
+        .mouse
+            width 30px
+            height 30px
+            position absolute
+            border-radius 50%
+            top 50px
+            background #d96b6e
+            left 50px
+
+            &:after
+                content ''
+                width 60px
+                height 30px
+                position absolute
+                border-radius 30%
+                top -10px
+                left -20px
+                background #fbdac7
+
+
+        .ear
+            width 10px
+            height 20px
+            position absolute
+            background #fbdac7
+            z-index 2
+            top 30px
+            
+
+            &.left-ear
+                border-radius 5px 0 0 10px
+                left -6px
+            &.right-ear
+                border-radius 0 5px 10px 0
+                right -6px
+
+    .clothes
+        background-color #ffffff
+        width 70px
+        height 80px
+        position absolute
+        top 112px
+        left 31px
+        z-index 2
+        border-radius 30% 30% 10px 10px
+        overflow hidden
+
+        .collar
+            z-index 3
+            position absolute
+            width 20px
+            height 10px
+            background green           
+
+            &.left-collar
+                left 12px
+                transform rotate(50deg)
+
+            &.right-collar
+                right 12px
+                transform rotate(-50deg)
+        
+        .straps
+            z-index 2
+            position absolute
+            width 6px
+            height 100px
+            background-color red
+
+            &.left-straps
+                left 12px
+
+            &.right-straps
+                right 12px
+    
+    .arm
+        width 70px
+        height 70px
+        border-radius 50%
+        z-index  1
+        position absolute
+        top 115px
+        background-color #ffffff
+
+        &.left-arm
+            left 10px
+            &:after
+                content ''
+                position absolute
+                width 60px
+                height 60px
+                left 12px
+                top 5px
+                background-color #ffef5e
+                border-radius  50%
+
+        &.right-arm
+            left 52px
+            &:after
+                content: ''
+                position absolute
+                background-color #ffef5e
+                width 60px
+                height 60px
+                top 5px
+                left -4px
+                border-radius  50%
+    .blet
+        background-color blue
+        width 70px
+        height 10px
+        position absolute
+        top 182px
+        left 31px
+        border 1px solid base-color
+        z-index  3
+        border-radius 5px
+    .skirt
+        background-color #ed023a
+        position absolute
+        background none
+        border-color #e9003a transparent
+        border-image none
+        border-style solid
+        border-width 0px 30px 50px
+        height 0
+        left 1px
+        top 194px
+        width 72px
+        z-index 3
+        border-radius 0 0 50% 50%
+    .leg
+        width 12px
+        height 40px
+        background-color #fadbc7
+        position absolute
+        top 220px
+        z-index 2
+        &.left-leg
+            left 40px
+        &.right-leg
+            left 78px
+
+        &:after
+            content ''
+            width 12px
+            height 16px
+            background-color #ffffff
+            border-bottom 0
+            top 40px
+            left -1px
+            position absolute
+    .shoes
+        width 40px
+        height 17px
+        position absolute
+        z-index 0
+        background-color #a23303
+        transform-origin 0 0
+        border-radius 50%
+
+        &.left-shoes
+            left 13px
+            top 280px
+            transform rotate(-20deg)
+            border-radius 50% 0 0 50% 
+        &.right-shoes
+            left 81px
+            top 267px
+            transform rotate(20deg)
+            border-radius 0 50% 50% 0
+
+
+        
+
+    
+
+
+
+
+
+        
+
+
+             
+  
