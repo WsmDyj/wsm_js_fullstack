@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 代理模式 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fir.im,中国N0.1 App 测试开发</title>
+    <link rel="stylesheet" href="./a.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>  
+    <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>  
+    <!-- <style>
+        /* Css reset 样式重置 让浏览器不受默认样式影响*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: yellow;
+        }
+        .plane-wrapper{
+            /* 定位，找到离他最近的position:relative，元素定位，直到Body */
+            position: absolute;
+            
+            top: 50%;
+           
+
+            /* keyframes 0%-> 100%
+            100%->0% 8s */
+            /* animation-direction: alternate; */
+            animation:underlate 6s linear infinite alternate;
+            
+        }
+        .plane-wrapper .rotate-container{
+            position: absolute;
+            top: 51.7003%;
+            left: 13.1%;
+            width: 27.424%;
+            height: 14.4474%;
+            /* 动作导演  动作剧本*/
+            /* animation-name: rotating;
+            animation-duration: .2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite; */
+            animation: rotating .2s linear infinite;
+        }
+        /* 每个动作设计 */
+        @keyframes rotating{
+            0%{
+                /* 变形 */
+                transform:rotate(0) rotateY(-20deg); 
+            }
+            50%{
+                transform:rotate(180deg) rotateY(-20deg); 
+            }
+            100%{
+                transform:rotate(360deg) rotateY(-20deg); 
+            }
+        }
+        .section-1.aninmaion-out .plane-wrapper{
+            animation: plane-out 1.3s  forwards ease-out; /*加速运动*/
+            
+        }
+        @keyframes plane-out {
+            /* 关键帧 */
+            0%{
+                /* 变形：移动transtion scale缩放大小 rotate旋转 */
+                transform: scale(1) translateX(0);
+            }
+            30%{
+                transform: scale(.8) translateX(160px);
+            }
+            100%{
+                  transform: scale(1.2) translateX(-2000px);
+            }
+        }
+        @keyframes underlate{
+           
+            0%,100%,50%{
+                transform: translate3d(0,0,0);
+            }
+            25%{
+                /* 平移 */
+                transform:translate(-6px,-18px,0);
+            }
+            75%{
+                transform: translate3d(6px,10px,0);
+            }
+        }
+    </style> -->
+</head>
+<body>
+<!-- 类名套路 
+wrapper 包装
+container 容器
+.Wrapper>.Contaier>.Box
+Htnl结构
+    着力？
+    1 整体 上下运动 Wrapper
+    2 分开运动 
+        螺旋桨 rotate
+            container
+        img 定位
+ 三元素类名关乎结构，业务，！状态       
+-->
+    <div class="section section-1 ready"  >
+        <div class="plane-wrapper">
+            <img src="http://fir.im/images/plane.svg"
+             alt="" class="plane">
+            <div class="rotate-container">
+                <img src="http://fir.im/images/propeller.svg"
+                 alt="" class="propeller">
+            </div>
+        </div>
+    </div>
+   <script>
+    //    查找元素的方法
+    
+    //     window.addEventListener("scroll",function(){
+    //         document.querySelector('.section-1').classList.add('aninmaion-out');
+    //         }
+    //    },false)
+
+
+
+       $(document).ready(function(){
+           $(window).mousewheel(function(){
+            document.querySelector('.section-1').classList.add('aninmaion-out');
+           })
+       })
+   </script>
+</body>
+</html>
