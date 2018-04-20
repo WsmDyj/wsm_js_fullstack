@@ -1,0 +1,44 @@
+html{
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 200;
+    
+}
+
+*,*::before,*::after{
+    box-sizing: inherit; /*继承*/
+}
+
+/* .box{
+    border: 3px solid #000000;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+} */
+
+.search-from{
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+input{
+    width: 100%;
+    padding: 20px;
+}
+
+input.search{
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    border: 10px solid #f7f7f7;
+    width: 120%;
+    left: -10%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0,0.12), inset 0 0 2px rgba(0,0,0,0.19 );
+}
