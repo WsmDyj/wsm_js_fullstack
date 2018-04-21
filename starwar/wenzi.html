@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打字动画</title>
+    <style>
+        .loading-text {
+            font-family: Consolas, Monaco, monospace;
+            display: inline-block;
+            color: #ED6A5A;
+            font-weight: bold;
+            width: 11ch;
+            animation: loading-text-typing 3s steps(11) infinite,
+                       loading-text-caret 1s steps(1) infinite;
+            white-space: nowrap;/*禁止换行*/
+            overflow: hidden;
+            border-right: 1px solid;
+        }
+
+        @keyframes loading-text-typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes loading-text-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <span class="loading-text">loading</span>
+</body>
+
+</html>
