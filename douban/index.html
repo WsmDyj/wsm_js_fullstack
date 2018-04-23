@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 20px;
+            background: #cccccc;
+            font-family: sans-serifs;
+            position: relative;
+        }
+        .TalionNav{
+            position: fixed;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            width: 100%;
+            
+        }
+        .TalionNav-primary{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .TalionNav-primary nav li{
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 12px;
+            
+
+        }
+    </style>
+</head>
+<body ontouchstart>
+     <!-- Web服务
+     本地开发环境 127.0.0.1:8080
+     局域网分配IP 192.168.31.128:8080
+     测试环境 IP：8080
+     线上环境  阿里云 -->
+     <div id="TalionNav">
+         <header class="TalionNav">
+             <div class="TalionNav-primary">
+                 <a href="/">
+                 <h1>豆瓣</h1>
+                </a>
+                 <nav>
+                     <ul>
+                         <li><a href="./">电影</a></li>
+                         <li><a href="./">图书</a></li>
+                         <li><a href="./">广播</a></li>
+                         <li><a href="./">音乐</a></li>
+                     </ul>
+                 </nav>
+             </div>
+         </header>
+     </div>
+</body>
+</html>
