@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template String</title>
+</head>
+<body>
+    <p>
+        <!-- ES6 更简洁，优雅，面向未来 -->
+    </p>
+       <ul id="dogs"></ul>
+    <script>
+        
+        // 能用const，就用const
+       const name = "小明";
+       const age = 18;
+    //    ''字符串模板
+       const sentence=  `My Friend ${name} is ${age} years old!Always!`
+    //    const sentence = "My Friend" + name +"is"+age+"years old! Always"
+    console.log(sentence);
+
+     const dogs = [
+         { name: 'Snickers',age:2},
+         { name: 'Hugo',age:8 },
+         { name: 'Sunny',age:1 }
+     ]
+        // js 是弱类型语言，在变量前面第一个字母加类型描述，有利于
+        const oUL = document.querySelector ('#dogs');
+        // for(let i =0;i<dogs.length;i++){
+        //     // 创建一个li html 标签 可以通过js 创建
+            // 1.createElement   2.appendChild
+            // const oLi = document.createElement('li');
+            // const strDog =`${dogs[i].name} is ${dogs[i].age} years old!`;
+            // oLi.appendChild(
+            //     document.createTextNode(strDog)
+            // // );
+            // oUL.appendChild(getOneDogHtml(dogs[i]));
+        // }
+
+    //    动态显示HTML DOM Dhtml
+    //  字符串让HTML模板组装变得优雅
+
+    /*
+        getOneDogHtml 返回单条狗的html
+        params:dog 类型 json key {name age}
+        return li 节点
+    */
+//    function getOneDogHtml(dogs){
+//        const oLi =document.createElement('li');
+//        const strDog =  `My Dog ${dog.name} is ${dog.age} years old`
+//        oLi.appendChild(Document.createTextNode(strDog));
+//        return oLi;
+//    }
+
+// 字符串模板接受换行，有点像html
+   const markup = `
+     ${
+         dogs.map(dog => `
+             <li>
+              ${dog.name} is ${dog.age *7}    
+            </li>
+         `
+        ).join('')
+     }
+
+   `
+       oUL.innerHTML = markup;
+
+     
+    </script>
+    
+</body>
+</html>
