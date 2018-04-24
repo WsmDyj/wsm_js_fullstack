@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用EasyMock 快速构建Web数据驱动的页面</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- EasyMock 
+  提供一个数据API
+  应用的资源通过URL方式向外暴露我们的数据，API -->
+  <!-- 前端如何引用一个库？ 
+  bootstrap twitter推出的最受欢迎的前端框架
+  70%左右的轮子都现成的，
+  使用cdn 一个下载到本地，烦，
+  cdn 加速的分发网络服务器
+  静态文件会缓存 -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <table class="table" id="stuTable">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>籍贯</th>
+                  <th>QQ</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <form name="addForm">
+          <div class="form-group">
+            <label for="usernameIput">姓名</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入你的姓名">
+          </div>
+          <div class="form-group">
+            <label for="hometownInput">籍贯</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入籍贯">
+          </div>
+          <div class="form-group">
+            <label for="qqInput">QQ</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入QQ">
+          </div>
+          <button type="submit" class="btn btn-default">添加</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  // 封装完的函数可以复用。
+  function renderStudentsHTML(students) {
+    const html = students.map(student => `
+      <tr>
+        <td>${student.name}</td>
+        <td>${student.hometown}</td>
+        <td>${student.qq}</td>
+      </tr>
+    `).join('');
+    document.querySelector('#stuTable tbody').innerHTML = html;
+  }
+
+  window.onload = function() {
+    fetch('https://www.easy-mock.com/mock/5aded0f2c57e6f08ff165a4b/students/infos#!method=get')
+      .then(data => data.json())
+      .then(data => {
+        const students = data.data.infos
+        // console.log(students)
+        renderStudentsHTML(students)
+      })
+  }
+
+  
+//寻找表单
+document.forms['addForm'].addEventListener(
+    'submit', function(event) {
+      event.preventDefault();
+      const strUsername = 
+        document.getElementById('usernameInput').value;
+      const strHometown = 
+        document.getElementById('hometownInput').value;
+      const strQQ = 
+      document.getElementById('qqInput').value;
+      console.log(strUsername, strHometown, strQQ);
+      const oTr = document.createElement('tr');
+      const oTd1 = document.createElement('td');
+      const oTd2 = document.createElement('td');
+      const oTd3 = document.createElement('td');   
+      oTr.appendChild(oTd1);
+      oTd1.appendChild(
+        document.createTextNode(strUsername)
+      );
+      oTr.appendChild(oTd2);
+      oTd2.appendChild(
+        document.createTextNode(strHometown)
+      );
+      oTr.appendChild(oTd3);
+      oTd3.appendChild(
+        document.createTextNode(strQQ)
+      );
+      document.querySelector('#stuTable tbody')
+        .appendChild(oTr)
+  },false);
+
+  </script>
+</body>
+</html>
