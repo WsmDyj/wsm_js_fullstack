@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{
+         margin: 0;
+         padding: 0;
+     }
+     .move_section{
+        /* background: red; */
+         margin-top: 50px;
+         margin-left: 300px;
+         overflow: hidden;
+         position: relative;
+     }
+     .move-list list  {
+        display: flex;
+        flex-direction: row;
+        
+        width: 100%;
+        position: absolute;
+       margin-top: 30px;
+     }
+     .move-item{
+         justify-content: space-between;
+         display: inline-block;
+     }
+     .pic,.info,.rating{
+        margin-top: 10px;
+        margin-left: 30px;
+       
+       
+     }
+     .info{
+         align-items: center;
+     }
+    
+     a{
+         text-decoration: none;
+         font-size: 18px;
+         align-items: center;
+     }
+     a:hover{
+         color: seagreen;
+     }
+     h2{
+         color: blue;
+     }
+    </style>
+</head>
+<!-- target="_self"不要打开新的页面 -->
+<body>
+    <div id="container">
+        <div class="move_section">
+            <h2>
+                正在放映&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;
+             <span class="pl">
+                (&nbsp;<a href="#" target="_self" style="color: rosybrown">更多</a>)
+             </span>
+            </h2>
+            <div class="move-list list">
+                 <ul >
+                     <li class="move-item">
+                         <div class="pic">
+                            <img src="images/5.png" alt="狂暴巨兽">
+                         </div>
+                         <div class="info">
+                            <div class="title">
+                                <a href="#">狂暴巨兽</a>
+                            </div>
+                            <div class="rating">
+                                <span class="allstar35"></span>
+                                <i>6.7</i>
+                            </div>
+                            <a href="#" class="btn-link btn-ticket"></a>
+                         </div>
+                    </li>
+                    <li class="move-item">
+                         <div class="pic">
+                            <img src="images/4 .png" alt="21克拉">
+                         </div>
+                         <div class="info">
+                            <div class="title">
+                                <a href="#">21克拉</a>
+                            </div>
+                            <div class="rating">
+                                <span class="allstar35"></span>
+                                <i>6.7</i>
+                            </div>
+                            <a href="#" class="btn-link btn-ticket"></a>
+                         </div>
+                    </li>
+                    <li class="move-item">
+                         <div class="pic">
+                            <img src="images/6 .png" alt="脱单告急">
+                         </div>
+                         <div class="info">
+                            <div class="title">
+                                <a href="#">脱单告急</a>
+                            </div>
+                            <div class="rating">
+                                <span class="allstar35"></span>
+                                <i>6.7</i>
+                            </div>
+                            <a href="#" class="btn-link btn-ticket"></a>
+                         </div>
+                    </li>
+                    <li class="move-item">
+                         <div class="pic">
+                            <img src="images/7.png" alt="头号玩家">
+                         </div>
+                         <div class="info">
+                            <div class="title">
+                                <a href="#">头号玩家</a>
+                            </div>
+                            <div class="rating">
+                                <span class="allstar35"></span>
+                                <i>6.7</i>
+                            </div>
+                            <a href="#" class="btn-link btn-ticket"></a>
+                         </div>
+                    </li>
+                 </ul>
+                  
+            </div>
+        </div>
+    </div>
+</body>
+</html>
