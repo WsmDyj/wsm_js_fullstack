@@ -1,0 +1,70 @@
+<html>
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<title>Document</title>
+		<style type="text/css">
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#allmap {
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#r-result,
+			#r-result table {
+				width: 100%;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mZI4XmzTUEBhFqvWawlp2hgL"></script>
+		<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<div id="allmap"></div>
+	    <input type="text"placeholder="请输入起点" id="str" value=""> <input id="end" type="text"value="" placeholder="请输入终点">
+		<button onclick="on()">确定</button>
+		<div id="r-result"></div>
+	</body>
+	<script type="text/javascript">
+		var map = new BMap.Map("allmap");
+		var longitude, latitude;
+		navigator.geolocation.getCurrentPosition(showPosition);
+
+		function showPosition(position) {
+			longitude = position.coords.longitude;
+			latitude = position.coords.latitude;
+			var gpsPoint = new BMap.Point(longitude, latitude);
+				BMap.Convertor.translate(gpsPoint, 0, function(point) {
+				var geoc = new BMap.Geocoder();
+				geoc.getLocation(point, function(rs) {
+				var addComp = rs.addressComponents;
+				map.centerAndZoom(point, 15);
+				map.setCurrentCity("");
+				var marker = new BMap.Marker(point); 
+				map.addOverlay(marker); 
+				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+				});
+				});
+		}
+		function on(){
+		var Str = document.getElementById('str').value;
+		var End = document.getElementById('end').value;
+		var walking = new BMap.WalkingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
+		walking.search(Str, End);
+		}
+		
+	</script>
+
+</html> 
