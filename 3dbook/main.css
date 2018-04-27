@@ -1,3 +1,4 @@
+/* css 3d会带来硬件加速 */
 * {
     margin: 0;
     padding: 0;
@@ -97,12 +98,31 @@
     background-color: #ffffff;
   }
   .front-cover .back{
-    background-image: url(https://www.html5tricks.com/demo/css3-3d-book/mdn.png);
+    background-image: url(./mdn.png);
     background-repeat: no-repeat;
-    background-position: center center;     
+    background-position: center center;
+    transform: translateZ(3px);     
   }
   .flip {
     transform: rotateY(180deg);
     /* left: 100%; */
+  }
+  .back-cover .back{
+    transform: translateZ(-3px);
+  }
+  .shadow,.dino{
+    width: 196px;
+    height: 132px;
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+  .shadow{
+    background: url('shadow.png') no-repeat;
+  }
+  .dino{
+    background: url('dino.png') no-repeat;
   }
   

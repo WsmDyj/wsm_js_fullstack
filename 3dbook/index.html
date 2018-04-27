@@ -9,6 +9,13 @@
 </head>
 <body>
   <div class="book p3d">
+      <div class="back-cove p3d">
+          <div class="page back flip"></div>
+          <div class="page front p3d">
+              <div class="shadow"> </div>
+              <div class="dino"style="transform:translateZ(1px) skewX(-2.00625deg)"></div>
+          </div>
+      </div>
     <div class="front-cover p3d">
       <div class="page front flip p3d">
         <p>
@@ -25,9 +32,12 @@
      var xm = (function(){
         var book = document.querySelector('.book');
         var page = document.querySelector('.front-cover');
+        var dino =document.querySelector('.dino');
+        var shadow =document.querySelector('.shadow');
         var hold = false;
         var pageSize = 300;
         var centerPoint = window.innerWidth/2;
+        var prefixes = ['Webkit','Moz','Ms','O',''];
         var clamp = function(val ,min,max){
             return Math.max(min,Math.min(val,max));
         }
@@ -36,21 +46,30 @@
          }
 
         page.onmouseup = function(){
-            hold = false
+            hold =    false
         }
         // 在事件发生的那一瞬间 evt 事件对象
         window.onmousemove = function(evt){
         
             // console.log(evt);
+            
+            for(var i=0 ,len=prefixes.length;i<len;i++){
+                var angle = clamp((centerPoint - evt.pageX+pageSize)/pageSize*-90,-180,0);
+            var prefix=prefixes[i];
+            book.style[prefix+'transform']= 'rotateX('+(60+angle/8)+'deg)';
+            page.style[prefix+'transform']='rotateY(' + angle + 'deg)';
+            dino.style[prefix+'transform']='translateX('+(angle/2)+'deg)';
+            shadow.style[prefix+'transform']='translateZ(1px)skewX('+(angle/8)+'deg)';
+
+            }
             if(!hold){
                 return;
             }
             // 在之前的倾斜度上，再倾斜 15deg 
-            var angle = clamp((centerPoint - evt.pageX+pageSize)/pageSize*-90,-180,0);
-            book.style.transform = 'rotateX('+(60+angle/8)+'deg)';
+            // var angle = clamp((centerPoint - evt.pageX+pageSize)/pageSize*-90,-180,0);
+            // book.style.transform = 'rotateX('+(60+angle/8)+'deg)';
             // 翻开首页
-            // page.style.transform = 'rotateY（'+angle+'deg)';
-            page.style.transform = 'rotateY(' + angle + 'deg)';
+            // page.style.transform = 'rotateY(' + angle + 'deg)';
 
         }
        
