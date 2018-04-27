@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3d books</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="book p3d">
+    <div class="front-cover p3d">
+      <div class="page front flip p3d">
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nisl quis nulla eleifend dignissim. Curabitur varius lobortis tincidunt. Maecenas gravida, nulla quis luctus imperdiet, ipsum nibh consectetur ante, in sodales massa tortor eget neque. Donec porta ligula massa, id sagittis est. Ut nisl tellus, faucibus nec feugiat ut, laoreet iaculis felis. Suspendisse ultrices mauris vel tellus suscipit commodo. Integer vitae tortor erat. Pellentesque non tempor nisi.
+        </p>        
+      </div>
+      <div class="page back"></div>
+    </div>
+  </div>
+  <script>
+    //   函数 可以创建作用域 函数后面再加一个（）立即执行  立即执行函数 避免全局变量的污染
+    // xm 命名空间
+    // 减少了全局变量的数量（污染），只有一个,xm形成了一个命名空间
+     var xm = (function(){
+        var book = document.querySelector('.book');
+        var page = document.querySelector('.front-cover');
+        var hold = false;
+        var pageSize = 300;
+        var centerPoint = window.innerWidth/2;
+        var clamp = function(val ,min,max){
+            return Math.max(min,Math.min(val,max));
+        }
+        page.onmousedown = function() {
+             hold = true
+         }
+
+        page.onmouseup = function(){
+            hold = false
+        }
+        // 在事件发生的那一瞬间 evt 事件对象
+        window.onmousemove = function(evt){
+        
+            // console.log(evt);
+            if(!hold){
+                return;
+            }
+            // 在之前的倾斜度上，再倾斜 15deg 
+            var angle = clamp((centerPoint - evt.pageX+pageSize)/pageSize*-90,-180,0);
+            book.style.transform = 'rotateX('+(60+angle/8)+'deg)';
+            // 翻开首页
+            // page.style.transform = 'rotateY（'+angle+'deg)';
+            page.style.transform = 'rotateY(' + angle + 'deg)';
+
+        }
+       
+      })()
+     
+  </script>
+</body>
+</html>

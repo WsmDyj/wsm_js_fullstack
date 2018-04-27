@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+    overflow: hidden;
+    font: 100%/1.5 Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    /* 视点 眼睛离屏幕的距离
+    浏览器兼容前缀
+    -webkit chrome
+    -ms 微软
+    -moz 火狐
+    -o 欧朋
+    兼容 移动端 -webkit   android iphone webkit
+    和PC 多做
+    */
+    /* color stop */
+    -webkit-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    background: #444444;
+    /* 图大 渐变css来生成 */
+    background-image: -webkit-gradient(linear, left top,
+     left bottom, from(#444444), to(#999999));
+    background-image: -webkit-linear-gradient(top,
+    #444444,#999999);
+    background-image: -moz-linear-gradient(top,
+    #444444,#999999);
+    background-image: -ms-linear-gradient(top,
+    #444444,#999999);
+    background-image: -o-linear-gradient(top,
+    #444444,#999999);
+    background-image: linear-gradient(to bottom,
+     #444444, #999999);
+  }
+  
+  .book {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;    
+    -o-transform-style: preserve-3d;  
+    transform-style: preserve-3d;
+  }
+  .book {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 二种方法 */
+    /* 兼容性 未使用css3, ie678 */
+    margin-left: -150px; 
+     margin-top: -150px;
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    background: red;
+    -webkit-transform: rotateX(60deg);
+    -moz-transform: rotateX(60deg);
+    -ms-transform: rotateX(60deg);
+    -o-transform: rotateX(60deg);
+    transform: rotateX(60deg);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .p3d {
+    transform-style: preserve-3d;
+  }
+  /* 正面  */
+  .front-cover {
+    cursor: move;
+    transform-origin: 0 50%;
+    transform: rotateY(0deg);
+  }
+  .front {
+    background-color: #d93e2b;  
+  }
+  .page {
+    width: 300px;
+    height: 300px;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 2em;
+  }
+  .back {
+    background-color: #ffffff;
+  }
+  .front-cover .back{
+    background-image: url(https://www.html5tricks.com/demo/css3-3d-book/mdn.png);
+    background-repeat: no-repeat;
+    background-position: center center;     
+  }
+  .flip {
+    transform: rotateY(180deg);
+    /* left: 100%; */
+  }
+  
