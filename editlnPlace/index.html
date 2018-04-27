@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>就地编辑</title>
+    <script src="./edit_in_place.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // js 的封装  不同于Java PHP
+        // js 粘合剂 
+        // js就是HTML css的城管 如何提供HTML，css 操作的封装到一个类里面 
+        // 为什么？以后一句话js 就用起来了，服用简单
+     var editor = new EditInPlace('name-Edit-Plce',document.getElementById('root'),'未命名'); 
+    </script>
+</body>
+</html>
