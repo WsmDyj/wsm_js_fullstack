@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5滑屏推广页面</title>
+    <script src="https://cdn.bootcss.com/Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container{
+        /* vw,vh 相对单位，单屏引用 手机屏幕大小 */
+        width: 100vw;
+        height: 100vh; 
+    }
+    .slide-1{
+        /* 图片比屏幕大 中间部分50% 0 */
+        background: url(https://img.aotu.io/xiaocezi/1.jpg) 50% 0 no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .slide-2{
+        /* 图片比屏幕大 中间部分50% 0 */
+        background: url(https://img.aotu.io/xiaocezi/2.jpg) 50% 0 no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .slide-3{
+        /* 图片比屏幕大 中间部分50% 0 */
+        background: url(https://img.aotu.io/xiaocezi/3.jpg) 50% 0 no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <!-- 已有的成熟解决方案来实现滑屏 -->
+    <div id="o2_main" class="mian">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+             <div class="swiper-slide slide-1"></div>
+             <div class="swiper-slide slide-2"></div>
+             <div class="swiper-slide slide-3"></div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script>
+        new Swiper('.swiper-container',{
+            direction: 'vertical',
+            loop:true,
+            pagination: {
+                el: '.Swiper-pagination'
+            }
+        })
+    </script>
+</body>
+</html>
