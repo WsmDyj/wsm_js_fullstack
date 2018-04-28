@@ -1,0 +1,24 @@
+.g-doc,.g-ct,.g-bd,.g-ft {width: 100%;}
+
+.g-doc {height: 100%;position: relative;}
+
+.g-ct {clear: both;min-height: 100%;height: auto !important;height: 100%;margin-bottom: -50px;}
+
+.g-bd {
+	width: 100%;
+	margin: 0px auto;
+	padding-bottom: 50px;
+	height: auto;
+}
+
+.g-ft {
+	min-width: 1000px;
+	clear: both;
+	position: relative;
+	background-color: #fff;
+	line-height: 30px;
+	color: #333;
+	text-align: center;
+	padding: 20px 0;
+	border-top: 2px solid #ccc;
+}
