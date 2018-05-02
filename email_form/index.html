@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Html5 表单API</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+        <!-- .trim()防止空格 -->
+        <!-- .indexof 判断字符串是否有啥 -->
+
+
+    <!-- html5 API 阻止了一些错误让体验更细致
+    input 各种type 适合各种类型的数据 
+    text password email number tel
+    自动去阻止表单提交，
+    ie不支持  html5只支持 IE9+ -->
+    <div class="container">
+    <form name="loginForm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" name="email" class="form-control"  id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="row">
+            <ul id="emails">
+
+            </ul>
+        </div>
+    </form>
+    </div>
+    <script>
+  (function(){
+        // 局部变量a
+        // var b = 5;var a = 10;
+        // 私有变量
+        const oForm = document.forms['loginForm'];
+        const arrEmail =[];
+        loadEmail();
+
+        oForm.addEventListener('submit',(event)=>{
+
+            event.preventDefault();
+
+            // js查找变量的方式
+            // 1.在本作用域内查找
+            // 2.如果1找不到。就去父及作用域找，
+            // 3.尽头是window
+            const oEmail = oForm.email;
+            // console.log(oEmail)
+            // 邮箱验证
+            // @前后两部分 .com.cn
+            const strEmail = oEmail.value.trim();
+            const reg = /^([a-zA-Z0-9_-]+)@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-]+)/
+            if (!reg.test(strEmail)) {
+                alert('邮箱格式有误');
+                return false;
+            }
+
+                // 显示到页面上
+              addEmail(strEmail);
+              saveEmail(strEmail);
+              oForm.reset();
+            
+            // 变量查找的方式
+           
+            // test true false 是否合格
+            // match （分组） 得到数组，正则查找功能
+           
+            if (!strEmail){
+                alert("你还没输入邮箱!")
+                return;
+            }
+            // this定不下来。它跟函数的执行方式有关
+            // 如果是箭头函数，在执行时this跟父及作用域一致 this 指向window
+            // 如果是普通函数，作为事件的回调函数被执行，this会指向事件发生的元素
+            
+            // ie9以下 input email => text 
+            // 及利用HTML5 内置的提醒
+        },false)
+        function addEmail(email){
+               const strHTML = `
+               <li>
+                    ${email}
+               </li>
+               `
+               document.querySelector('#emails').innerHTML += strHTML;
+            }
+            function loadEmail(){
+                // 从何加载
+                //setItem 设置 key => value
+               let  email = localStorage.getItem('email');
+               if (email.indexOf(',')>-1){
+                   console.log(email);
+                //    const list = '';
+                    const emails = email.split(",");
+                    for (let i=0;i<emails.length;i++){ 
+                        addEmail(emails[i]);
+                    }
+               }else{
+                addEmail(email);
+               }
+            }
+        function saveEmail(email){
+
+            // key => value 存的不只是字符串，多个  数组对象不可以存， tostring
+
+            let strEmail = localStorage.getItem('email');
+            if(strEmail){
+                strEmail += `,${email}`;
+            }else{
+                strEmail = email;
+            }
+            localStorage.setItem('email',strEmail);
+        }
+      
+    })()
+    // 全局变量 window 顶级
+    // document 文档
+    // console.log(a)
+    </script>
+</body>
+</html>
