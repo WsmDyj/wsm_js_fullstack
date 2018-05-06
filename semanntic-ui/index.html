@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div id="root"></div>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525327929710&di=9aa2bd5e32164164df56390f0b71040a&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2439355652%2C1852440864%26fm%3D214%26gp%3D0.jpg"
+        alt="">
+    <script>
+        // image 结点 node
+        // node 结点就形成了dom树
+        // dom api appendChild   .style.background
+        // 原材料 html css 
+        // 当树成型了后，就会触发dom Ready 事件 
+        // 解析HTML构建DOM Tree
+        // 构建渲染树(解析css)
+        // 布局渲染树
+        // 页面绘制 render
+        // 网页内容下载完成 
+        // http请求的资源 资源
+        // img script 
+
+
+        // window.onload 
+        // js下载有阻塞
+        // 放到底部， 如果需求并不复杂，为了加速，选择启用框架
+        
+        
+        // $(function(){
+        //     $('#root').html('为什么写代码');
+        // })
+       
+        // // 页面加载完成
+        // window.onload = function () {
+        //     console.log('页面加载完成');
+        // }
+        // // 早一点 DOM Ready事件
+        // $(function(){
+        //     console.log('DOM Ready');
+        // })
+
+        // $ 是jQuery 在window 唯一的命名空间
+        // $() $=>function  callback
+        // function(){}  参数
+
+    (function (g) {
+        // 只有jquery访问得到，外面访问不到
+        // 立即执行 函数作用域 好处
+        function ElementWrapper(){
+        }
+        function ElementWrapper(selector){
+            this.ele =document.querySelector(selector);
+            if(!this.ele)
+            throw new Error('没有这个元素');
+        } 
+        ElementWrapper.prototype={
+
+                    html:function(strHTML){
+                        this.ele.innerHTML=strHTML;
+                    }
+                }
+        // jQuery野心 对原生api的封装
+        // js原生有很多兼容性问题，选择jquery的原因
+        g.$ = function (param) {
+            if (typeof param === 'function') {
+                document.addEventListener('DOMContentLoaded', param, false);
+            }
+            else if (typeof param === 'string') {
+                // obj.html() 差距
+                // ele.innerHTML
+                // dom  结点 =>类
+
+                const obj = new ElementWrapper(param);
+
+                return obj;
+                // return  document.querySelector(param);
+
+                // 怎么提供html
+                // 返回结点
+                // $('#root').innerHTML='';
+            }
+            // window.onload 加载之前完
+            // document是整个dom树的顶级对象
+            // 事件注册
+            // IE低版本不支持
+        }
+    })(window)
+
+
+    $(function () {
+        // console.log('dom ready');
+        // js动态语言 随时加属性
+        $('#root').html('颖宝最漂亮了');
+    })
+</script>
+    </body>
+    
+    </html>
