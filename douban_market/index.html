@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣集市</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <div id="db-global-nav" class="global-nav">
+        <!-- 男主外margin height，女主内padding,分开来定义，提高代码的复用 -->
+        <div class="bd"> 
+            <div class="top-nav-info">
+                <a href="#" class="nav-login">登录</a>
+                <a href="#" class="nav-register">注册</a>
+            </div>
+            <div class="top-nav-doubanapp">
+                <a href="#" class="lnk-doubanapp">下载豆瓣客户端</a>
+            </div>
+            <div class="global-nav-items">
+                <ul>
+                    <li class="on"><a href="#">豆瓣</a></li>
+                    <li><a href="#">读书</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">同城</a></li>
+                    <li><a href="#">小组</a></li>
+                    <li><a href="#">阅读</a></li>
+                    <li><a href="#">FM</a></li>
+                    <li><a href="#">时间</a></li>
+                    <li><a href="#">集市</a></li>
+                    <li><a href="#">更多</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div id="market-main" style="min-height: 670px">
+        <header id="market-header" class="market-global-header">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="/" class="market-logo">豆瓣市集</a>
+                </div>
+                <div class="market-user">
+                <div class="user-people">
+                    <div id="header-user-pic" class="user-pic">
+                        <img src="http://img3.doubanio.com/icon/user_large.jpg">
+                        <span>个人中心</span>
+                    </div>
+                    <ul class="nav-list"style="display: none;">
+                    <li class="nav-item">
+                        <a href="#">市集/纸书订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">我的优惠卷</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">收货地址管理</a>
+                    </li>
+                    </ul>
+                    
+                </div>
+                </div>
+            </div>
+        </header>
+        <div class="homepage" id="homepage">
+            <!-- bannder 滑块 -->
+            <div class="banner-wrapper">
+                <div class="slide-box" id="slide-top">
+                    <div class="slide" data-thumbnail-enabled="false" data-image-height="580"data-image-width="1440"style="position: relative;
+                    z-index: 1;height: 412.444px;width: 1024px;">
+                    <div class="slide-inner" style="position: absolute; z-index: 1;width: 6144px;height: 412.444px;top: 0;left: 0">
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1524729256-1.jpg" alt="None">
+                            </a>
+                        </div>
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1519640597-2.jpg" alt="None">
+                            </a>
+                        </div>
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1524881486-1.jpg" alt="None">
+                            </a>
+                        </div>
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1524122635-1.jpg" alt="None">
+                            </a>
+                        </div>
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1525686721-0.jpg" alt="None">
+                            </a>
+                        </div>
+                        <div class="slide-item"data-thumbnial style="height: 412.444px;width: 1024px;">
+                            <a href="#">
+                                <img src="https://img3.doubanio.com/img/files/file-1524122635-1.jpg" alt="None">
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="slide-button-next"></a>
+                    <a href="#" class="slide-button-prev"></a>
+                    <ul class="slide-paginator"></ul>
+                </div>
+                </div>
+            </div>
+            <div class="homepage-wrapper">
+                <div class="product-card-list">
+                   <a href="#" class="product-card ltr">
+                       <div class="product-photo">
+                           <img src="https://img3.doubanio.com/img/files/file-1525683631-0.jpg" alt="">
+                       </div>
+                       <div class="product-info">
+                           <h5 class="product-title">豆瓣收藏夹</h5>
+                           <p class="product-desc">珍藏那些不舍丢弃的照片和票根，给你的回忆移除安防之所。</p>
+                           <div class="product-prices">
+                               <span class="sale-price">￥99</span>
+                               <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                           </div>
+                           <div class="product-buttons">
+                               <button class="mui-button l red">立即购买</button>
+                           </div>
+                       </div>
+                   </a>
+                     <a href="#" class="product-card ltr">
+                    <div class="product-photo"  style="float: left;">
+                        <img src="https://img3.doubanio.com/img/files/file-1524482877-0.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">豆瓣「三刻」双肩包</h5>
+                        <p class="product-desc">珍藏那些不舍丢弃的照片和票根，给你的回忆移除安防之所。</p>
+                        <div class="product-prices">
+                            <span class="sale-price">￥499</span>
+                            <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="mui-button l red">立即购买</button>
+                        </div>
+                    </div>
+                    </a>
+                   <a href="#" class="product-card ltr">
+                        <div class="product-photo">
+                                <img src="https://img3.doubanio.com/img/files/file-1524191350-0.jpg" alt="">
+                            
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">豆瓣线装笔记本</h5>
+                            <p class="product-desc">珍藏那些不舍丢弃的照片和票根，给你的回忆移除安防之所。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥18</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">新品</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product-card ltr">
+                        <div class="product-photo" style="float: left;">
+                            <img src="https://img3.doubanio.com/img/files/file-1518508006-0.jpg" alt="豆瓣·电影畅想系列手机壳">
+                        </div>
+                        <div class="product-info">
+                                <h5 class="product-title">豆瓣·电影畅想系列手机壳</h5>
+                                <p class="product-desc">以经典电影为图案灵感，自然元素塑造独特造型，高质量双重材质，保护你的手机。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥56</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">新品</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="product-card ltr">
+                        <div class="product-photo">
+                                <img src="https://img3.doubanio.com/img/files/file-1513071502-0.jpg" alt="豆瓣笔记本·遇见你系列">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">豆瓣笔记本·遇见你系列</h5>
+                            <p class="product-desc">方格内页，落笔顺畅，不洇不透。愿你在书写中遇见自我。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥99</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                        </a>
+                    <a href="#" class="product-card ltr">
+                        <div class="product-photo"style="float: left;">
+                                <img src="https://img3.doubanio.com/img/files/file-1516599034-0.jpg" alt="">
+                            
+                        </div>
+                        <div class="product-info" >
+                                <h5 class="product-title">豆瓣心茶</h5>
+                                <p class="product-desc">严选优质鲜花与茶叶，精心窨制花茶。万千心意，尽在心茶。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥99</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                        </a>
+                   
+                    <a href="#" class="product-card ltr">
+                            <div class="product-photo">
+                                <img src="https://img3.doubanio.com/img/files/file-1513071502-2.jpg" alt="">
+                            </div>
+                            <div class="product-info">
+                                    <h5 class="product-title">豆瓣帆布包·早餐系列</h5>
+                                <p class="product-desc">简约版型 + 多层收纳 + 食欲满满的早餐图案 = 你不可或缺的搭配好物</p>
+                                    
+                                <div class="product-prices">
+                                    <span class="sale-price">￥99</span>
+                                    <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                                </div>
+                                <div class="product-buttons">
+                                    <button class="mui-button l red">立即购买</button>
+                                </div>
+                            </div>
+                        </a>
+                    <a href="#" class="product-card ltr">
+                        <div class="product-photo" style="float: left;">
+                            <img src="https://img3.doubanio.com/img/files/file-1512011430-0.jpg" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">豆瓣电影日历2018</h5>
+                            <p class="product-desc">全年高分片单，流畅翻页设计，让豆瓣陪你一起感受时光。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥99</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                        </a>
+                    <a href="#" class="product-card ltr">
+                        <div class="product-photo" >
+                            <img src="https://img3.doubanio.com/img/files/file-1523413054-0.jpg" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">豆瓣精品挂耳咖啡-甜橙庄园系列</h5>
+                            <p class="product-desc">甄选COE获奖精品咖啡。花香浓郁，果香四溢，回味甘甜。</p>
+                            <div class="product-prices">
+                                <span class="sale-price">￥99</span>
+                                <em class="product-tag" style="border-color: #f05f50;color: #f05f50;">热卖</em>
+                            </div>
+                            <div class="product-buttons">
+                                <button class="mui-button l red">立即购买</button>
+                            </div>
+                        </div>
+                        </a>
+                </div>
+            </div>
+            <div class="homepage-wrapper">
+                <div class="group">
+                    <div class="group-hd">
+                        <a href="#" class="more">查看更多</a>
+                        <h4>市集小组</h4>
+                    </div>
+                    <ul class="group-topics">
+                        <li class="group-topic-item">
+                            <em class="topic-update-time">04-26</em>
+                            <span class="topic-comment-amount">
+                                <em>9</em>
+                            </span>
+                            <a href="#" class="topic-title">
+                                【强势上新发券（活动已结束）】豆瓣线装笔记本全新上市┃珍惜 你随手写下的每分思绪
+                            </a>
+                        </li>
+                        <li class="group-topic-item">
+                            <em class="topic-update-time">04-21</em>
+                            <span class="topic-comment-amount">
+                                <em>26</em>
+                            </span>
+                            <a href="#" class="topic-title">
+                                【补货消息】豆瓣·电影畅想系列手机壳补货啦~
+                            </a>
+                        </li>
+                        <li class="group-topic-item">
+                            <em class="topic-update-time">04-26</em>
+                            <span class="topic-comment-amount">
+                                <em>10</em>
+                            </span>
+                            <a href="#" class="topic-title">
+                                【晒单邀请】参与豆瓣咖啡晒单活动，得即将上市的新品搪瓷杯
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="homepage-wrapper">
+                <div class="topics">
+                    <div class="topics-hd">
+                        <h4>热门活动</h4>
+                    </div>
+                    <ul class="topics-list">
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1524481845-1.png)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1520332486-0.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1517992478-0.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1515387415-0.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1513591841-0.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1512976575-3.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1512976575-1.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1512976575-2.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="topic-item">
+                                <div class="topic-photo"style="background-image:url(https://img3.doubanio.com/img/files/file-1512976575-0.jpg)"></div>
+                                <div class="topic-info">
+                                    <p class="topic-title">
+                                        #男生的包里有什么
+                                    </p>
+                                    <p class="topic-desc">
+                                        以及……看看豆瓣男员工的包里都有什么！
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-footer">
+                <a href="#" class="item">
+                    <i class="mui-icon warning-triangle"></i>
+                    <span>购物说明</span>
+                </a>
+                <a href="#" class="item">
+                    <i class="mui-icon warning-triangle"></i>
+                    <span>购物反馈</span>
+                </a>
+                <a href="#" class="item">
+                    <i class="mui-icon warning-triangle"></i>
+                    <span>联系我们</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        
+    </div>
+</body>
+</html>
