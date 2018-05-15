@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WEUI CELL</title>
+  <link rel="stylesheet" href="./weui_cell.css">
+  <link rel="stylesheet" href="./weui_btn.css">
+  <link rel="stylesheet" href="./weui_agree.css">
+  <link rel="stylesheet" href="./base.css">
+</head>
+<body>
+    <div class="weui-cells_title">登录</div>
+  <div class="weui-cells weui-cells_form weui-cells_radio">
+    <div class="weui-cell">
+      <div class="weui-cell__hd">
+        <label class="weui-label">用户名</label>
+      </div>
+      <div class="weui-cell__bd">
+        <input type="text" class="weui-input" placeholder="请输入用户名"/>
+      </div>
+      <div class="weui-cell__ft">
+        <input type="radio" class="weui-check" checked="true">
+        <span class="weui-icon-checked"></span>
+      </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+          <label class="weui-label">密码</label>
+        </div>
+        <div class="weui-cell__bd">
+          <input type="password" class="weui-input" placeholder="请输入用户名"/>
+        </div>
+    </div>
+  </div>
+  <laber for="weuiAgree" class="weui-agree">
+      <input type="checkbox" id="weuiAgree" class="weui-agree_checkbox">
+      <span class="weui-agree_text">
+          阅读并同意
+          <a href="#">《相关条款》</a>
+      </span>
+  </laber>
+    <div class="weui-btn-area">
+        <a href="" class="weui-btn weui-btn_primary">提交</a>
+    </div>
+</body>
+</html>
