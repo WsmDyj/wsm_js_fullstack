@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./font/iconfont1.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: #ccc;
+    }
+    #header .w{
+        position: relative;
+        z-index: 11;
+        height: 140px;
+    }
+    .w{
+        margin: auto;
+        width: 1190px;
+    }
+    .search-m{
+        position: relative;
+        z-index: 1;
+        height: 60px;
+    }
+    .search-m .form{
+        position: absolute;
+        left: 320px;
+        top: 25px;
+        width: 550px;
+        height: 35px;
+    }
+    .search-m .text{
+        left: 0;
+        padding: 4px 44px 4px 4px;
+        width: 450px;
+        height: 25px;
+        border: 1px solid transparent;
+        line-height: 25px;
+        font-size: 14px;
+       
+    }
+    .search-m .button, .search-m .text{
+        position: absolute;
+        top: 0;
+        outline: none;
+    }
+    .button, input{
+        font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif
+    }
+    .search-m .button{
+        border-radius: 0;
+        right: 0;
+        width: 50px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        background-color: #f10215;
+        font-size: 20px;
+        color: #fff;
+    }
+    button{
+        cursor: pointer;
+    }
+    #settleup{
+        position: absolute;
+        right: 99px;
+        top: 25px;
+        z-index: 21;
+    }
+    #settleup .cw-icon{
+        width: 188px;
+        height: 33px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 33px;
+    }
+    .cw-icon{
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        float: left;
+        border: 1px solid #e3e4e5;
+    }
+    .ci-left, .ci-right, .dd-spacer{
+        display: none!important;
+    }
+    .ci-left, .ci-right, .dd-spacer{
+        display: none!important;
+    }
+    i{
+        font-style:normal;
+    }
+    #settleup .ci-count{
+        position: absolute;
+        top: 5px;
+        left: 150px;
+        right: auto;
+        display: inline-block;
+        padding: 1px;
+        font-size: 12px;
+        line-height: 12px;
+        color: #fff;
+        background-color: #f10215;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        min-width: 12px;
+        text-align: center;
+    }
+    .photo-search-btn{
+        position: absolute;
+        right: 60px;
+        top: 5px;
+        width: 19px;
+        height: 15px;
+       
+        /* background: red; */
+    }
+    #settleup .cw-icon .iconfont{
+        margin-right: 3px;
+        font-size: 16px;
+        color: #f10214;
+    }
+    .iconfont{
+        font-family:iconfont ;
+        font-style: normal;
+
+    }
+    #settleup .cw-icon a{
+        color: #f10214;
+    }
+    a{
+        text-decoration: none;
+    }
+    #settleup .dorpdown-layer, #settleup .dropdown-layer{
+        top: 35px;
+        right: 0;
+        width: 308px;
+    }
+    .dropdown-layer{
+        display: none;
+        position: absolute;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+    }
+    .cart_pop{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        background: #fff;
+    }
+    .cart_empty{
+        height: 49px;
+        margin: 0 auto;
+        padding: 10px 0;
+        text-align: center;
+        line-height: 49px;
+        overflow: hidden;
+        color: #999;
+    }
+    .cart_empty_img{
+        display: inline-block;
+        vertical-align: middle;
+        width: 56px;
+        height: 49px;
+        background: url("https://img11.360buyimg.com/uba/jfs/t3571/299/131233948/1117/a1196554/58004d6dN2927f0f7.png");
+    }
+    .active{
+        color: #fff;
+        font-size: 30px;
+    }
+    .lg{
+        font-size: 25px;
+        color: rgba(0,0,0,.5);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="w">
+            <div class="search">
+                <div class="search-m">
+                    <div class="form">
+                        <input clstag="h|keycount|head|search_a" type="text" autocomplete="off" id="key" placeholder="多功能电风扇" accesskey="s" class="text" style="color: rgb(153, 153, 153);">
+                        <span class="photo-search-btn">
+                            <i class="iconfont  icon-zhaoxiangji lg"></i>   
+                        </span>
+                        <button clstag="h|keycount|head|search_c" class="button">
+                            <i class="iconfont icon-search active"></i> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">
+                    <div class="cw-icon">
+                      <i class="ci-left"></i>
+                      <i class="ci-right">&gt;&gt;</i><i class="ci-count" id="shopping-amount">0</i>
+                      <i class="iconfont icon-gouwuche01 lg"></i>
+                      <a target="_blank" href="//cart.jd.com/cart.action">我的购物车</a>
+                    </div>
+                    <div class="dropdown-layer">
+                  <div class="cart_pop">
+                    <div class="cart_empty">
+                      <i class="cart_empty_img"></i>
+                      购物车中还没有商品，赶紧选购吧！
+                    </div>
+                  </div></div>
+                  </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+           var set= document.querySelector('#settleup');
+           var layer = document.querySelector('.dropdown-layer');
+           set.onmouseover = function(){
+               layer.style.display = "block";
+           }
+           set.onmouseout = function(){
+            layer.style.display = "none";
+           }
+        }
+    </script>
+</body>
+</html>
