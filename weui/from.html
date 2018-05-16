@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="./weui_btn.css">
   <link rel="stylesheet" href="./weui_agree.css">
   <link rel="stylesheet" href="./base.css">
+  <script>
+    // 不同的手机rem 单位是 宽度10分之一
+    (function(w){
+        // window是js全局,DOM document 只是其中一部分 导航location href navigator lbs经纬度 陀螺仪 存储localStorage
+        let s = w.document;
+        let r = s.documentElement;
+        let colWidth = r.clientWidth/10;       
+        r.style.fontSize = colWidth+'px';
+
+    //     const width= document.documentElement.clientWidth;
+    //     let c=  window.document.documentElement.style.fontSize =width/10;
+    })(window)
+</script>
 </head>
 <body>
     <div class="weui-cells_title">登录</div>
@@ -18,7 +31,7 @@
         <label class="weui-label">用户名</label>
       </div>
       <div class="weui-cell__bd">
-        <input type="text" class="weui-input" placeholder="请输入用户名"/>
+        <input type="text" class="weui-input"id="userInput" placeholder="请输入用户名"/>
       </div>
       <div class="weui-cell__ft">
         <input type="radio" class="weui-check" checked="true">
@@ -30,7 +43,7 @@
           <label class="weui-label">密码</label>
         </div>
         <div class="weui-cell__bd">
-          <input type="password" class="weui-input" placeholder="请输入用户名"/>
+          <input type="password" class="weui-input"id="passwordInput"  placeholder="请输入密码" minlength="6" maxlength="16"/>
         </div>
     </div>
   </div>
@@ -42,7 +55,101 @@
       </span>
   </laber>
     <div class="weui-btn-area">
-        <a href="" class="weui-btn weui-btn_primary">提交</a>
+        <a href="javascript:;" id="loginBtn" class="weui-btn weui-btn_primary">提交</a>
     </div>
+
+    <!-- <script>
+        
+        function setCookie(name,value,iDay){
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+            document.cookie=name+'='+value+';expires='+oDate;
+        }
+        function getCookie(name)
+        {
+            var arr = document.cookie.split(';');
+            console.log(arr);
+            for( var i=0;i<arr.length;i++){
+                // console.log(arr[i]);
+               var arr2 = arr[i].split('=');
+               console.log(arr2[0]);
+               if(arr2[0]==name){
+                   return arr2[1];
+               }
+            }
+            return '没有记录';
+        }
+            {
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg))
+            return unescape(arr[2]);
+            else
+            return null;
+            }
+
+        function removeCookie(name){
+            setCookie(name,'abc',-1);
+        }
+        alert(getCookie('password'));
+        // removeCookie('uesename');
+        // alert(getCookie('username'));
+
+
+        setCookie('username','abc',30)
+        setCookie('password','123456',30)
+        setCookie('aaa','123',30)
+     
+    </script> -->
+
+
+    <script>
+        window.onload = function(){
+            const loginBtn = document.getElementById('loginBtn');
+            // 登录流程对象化
+            const LoginFrom ={
+                userInput: document.getElementById('userInput'),
+                passwordInput: document.getElementById('passwordInput'),
+                sumbit: function(){
+                   if(!this.checkUsername()) {
+                       this.userInput.focus();  /*让input元素聚焦*/
+                       return false;
+                   }
+                   if(!this.checkpassword()){
+                       return false;
+                   }
+                   return true;
+                },
+                checkpassword: function(){
+                    const strPassword = this.passwordInput.value.trim();
+                    if(!strPassword){
+                        this.passwordInput.focus();
+                    }
+                    const strLength = strPassword.length;
+                    if(strLength<6||strLength>16){
+                        alert('密码长度需要大于6位，小于16位');
+                        return false;
+                    }
+                    return true;
+                },
+                checkUsername:function(){
+                    const strUsername = this.userInput.value.trim();
+                    if(!strUsername){
+                        return false;
+                    }
+                   return true; 
+                },
+                reset: function(){
+
+                }
+            }
+            
+            loginBtn.addEventListener('click',function(event){
+               if(LoginFrom.sumbit()){
+                   LoginFrom.reset();
+                   alert('表单提交成功');
+               }
+            },false)
+        }
+    </script>
 </body>
 </html>
