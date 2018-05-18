@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise es6 异步当家花旦</title>
+</head>
+<body>
+    <script>
+        // console.log('开始了') ;
+        // fetch('https://wesbos.com/wp-json/wp/v2/posts') 
+        // .then(data=>data.json())
+        // .then(function(res){
+        //   console.log('A')
+        // })
+        // fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+        // .then(data=>data.json())
+        // .then(function(res){
+        //     console.log('B')
+        // })
+        // // 等到异步A和异步B发生之后再执行
+        // // 顺序执行？js执行顺序不再同步了
+        // console.log('C')
+
+
+
+
+        // // 异步 所以js的执行顺序得不到保证，A->B->C ?
+
+        // 许下诺言，先好好写代码，找到工作之后一定回来找你
+        // 对未来会发生的事情
+        // 将要耗时的事情，交给promise  resolve解决  reject 拒绝
+        // 复杂任务时的调度
+        // const p =  new Promise((resolve,reject)=>{
+        //     console.log('A');
+        //     setTimeout(()=>{
+        //         // 数据查询 mysql,读取文件、定时任务。
+
+        //         reject('失败的原因')
+        //         // resolve('A IS OVER');
+        //     },1000)
+        // })
+        // // 控制代码执行次序
+        // p.then((res)=>{
+        //     console.log(res);
+        // }).catch(e=>{
+        //     console.log(e)
+        // })
+        // 强制代码的执行顺序，同步执行
+        // B ? ...
+        // A 长时间 => C(A)
+
+            
+        // 两件异步事，发生的不确定时间 Promise 
+            // const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+            const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+            
+            // js不会为异步停留
+            // 最晚的那个执行完，A B 结果，在执行c
+            Promise
+            .all([streetCarsPromise])
+            .then(response =>{
+               return Promise.all(response.map(
+                   res => res.json()
+               ))
+            })
+            .then(response =>{
+                console.log(response)
+            })
+    </script>
+</body>
+</html>
